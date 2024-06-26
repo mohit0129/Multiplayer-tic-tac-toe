@@ -162,7 +162,8 @@ const sendEmoji = (emoji) => {
   };
 
   const initializeWebSocket = () => {
-    socket = new WebSocket('ws://localhost:8080');
+    //socket = new WebSocket('ws://localhost:8080');
+	socket = new WebSocket('wss://server-11234.onrender.com');
 
     socket.onopen = () => {
       socket.send(JSON.stringify({ type: 'join', roomId: roomId, playerName: playerName }));
